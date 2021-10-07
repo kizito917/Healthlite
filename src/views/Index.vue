@@ -77,21 +77,26 @@ export default {
     methods: {
         async login() {
             this.$store.dispatch('toggleSpinner', true)
-            await loginUser(this.form).then((data) => {
+            if (this.form.email == '' && this.form.password == '') {
                 this.$store.dispatch('toggleSpinner', false)
-                //checking if the data returned by service (i.e verification_status) is true or not
-                if (data == true) {
-                    this.$store.dispatch('showNotificationComponent', {type: 'success', msg: 'Login Successful...Redirecting to Dashboard'})
-                    setTimeout(() => {
-                        this.$router.push('/dashboard')
-                    }, 2000);
-                } else {
-                    this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Your account is not yet verified'   })
-                }
-            }).catch(() => {
-                this.$store.dispatch('toggleSpinner', false)
-                this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Unable to process Login'   })
-            })
+                this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Please fill all fields'   })
+            } else {
+                await loginUser(this.form).then((data) => {
+                    this.$store.dispatch('toggleSpinner', false)
+                    //checking if the data returned by service (i.e verification_status) is true or not
+                    if (data == true) {
+                        this.$store.dispatch('showNotificationComponent', {type: 'success', msg: 'Login Successful...Redirecting to Dashboard'})
+                        setTimeout(() => {
+                            this.$router.push('/dashboard')
+                        }, 2000);
+                    } else {
+                        this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Your account is not yet verified'   })
+                    }
+                }).catch(() => {
+                    this.$store.dispatch('toggleSpinner', false)
+                    this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Unable to process Login'})
+                })
+            }
         }
     }
 }
