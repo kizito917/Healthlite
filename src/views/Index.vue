@@ -13,11 +13,11 @@
                         </div>
                         <div class="form-div">
                             <div class="form-group">
-                                <label for="" class="text-caption">Email Address</label>
+                                <label for="" class="text-caption">Username</label>
                                 <v-text-field
-                                type="email"
-                                v-model="form.email"
-                                label="example@mail.com"
+                                type="text"
+                                v-model="form.username"
+                                placeholder="John Doe"
                                 required
                                 ></v-text-field>
                             </div>
@@ -26,7 +26,7 @@
                                 <v-text-field
                                 type="password"
                                 v-model="form.password"
-                                label="******************"
+                                placeholder="******************"
                                 required
                                 ></v-text-field>
                             </div>
@@ -69,7 +69,7 @@ export default {
     data() {
         return {
             form: {
-                email: '',
+                username: '',
                 password: ''
             }
         }
@@ -77,7 +77,7 @@ export default {
     methods: {
         async login() {
             this.$store.dispatch('toggleSpinner', true)
-            if (this.form.email == '' || this.form.password == '') {
+            if (this.form.username == '' || this.form.password == '') {
                 this.$store.dispatch('toggleSpinner', false)
                 this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Please fill all fields'   })
             } else {
