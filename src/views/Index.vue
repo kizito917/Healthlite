@@ -77,7 +77,7 @@ export default {
     methods: {
         async login() {
             this.$store.dispatch('toggleSpinner', true)
-            if (this.form.email == '' && this.form.password == '') {
+            if (this.form.email == '' || this.form.password == '') {
                 this.$store.dispatch('toggleSpinner', false)
                 this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Please fill all fields'   })
             } else {

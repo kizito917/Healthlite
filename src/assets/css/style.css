@@ -81,3 +81,11 @@ div.scroll {
         border-radius: 10px
     }
 }
+
+@media only screen and (max-device-width: 600px) {
+    .parent-div {
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

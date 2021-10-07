@@ -41,6 +41,7 @@
                 :permanent="false"
                 color="#1565D8"
                 width="180"
+                style="position: fixed;"
                 >
                 <v-list class="pb-4" dense dark>
                     <v-list-item>
