@@ -1,10 +1,10 @@
 <template>
-    <v-app>
+    <v-container-fluid>
         <Navbar />
-            <v-content class="main-view">
-                <v-container class="px-4 py-0 fill-height" fluid>
+            <v-main class="mt-6">
+                <div class="parent-div">
                     <transition name="fade">
-                        <v-row class="fill-height">
+                        <v-row>
                             <v-col cols="12" md="12">
                                 <div class="px-3">
                                     <div>
@@ -60,9 +60,9 @@
                             </v-col>
                         </v-row>
                     </transition>
-                </v-container>
-            </v-content>
-    </v-app>
+                </div>
+            </v-main>
+    </v-container-fluid>
 </template>
 
 

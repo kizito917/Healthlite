@@ -1,36 +1,48 @@
 <template>
-        <v-app>
-            <v-app-bar app color="white" dark elevation="4">
-                <v-app-bar-nav-icon @click.stop="sidebarMenu = !sidebarMenu"></v-app-bar-nav-icon>
-                <v-spacer></v-spacer>
-                <v-badge
-                    color="#FF8080"
-                    content="2"
-                    overlap
+        <div>
+            <v-card flat>
+                <v-container fluid>
+                <v-row class="child-flex">
+                    <div>
+                    <v-toolbar
+                    color="white" 
                     >
-                    <v-icon
-                    style="color: grey;"
-                    
-                    >
-                        mdi-bell
-                    </v-icon>
-                </v-badge>
+                        <v-app-bar-nav-icon @click.stop="sidebarMenu = !sidebarMenu"></v-app-bar-nav-icon>
 
-                <v-avatar
-                size="30"
-                class="ml-5"
-                >
-                    <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-                </v-avatar>
-            </v-app-bar>
+                        <v-spacer></v-spacer>
+
+                        <v-badge
+                            color="#FF8080"
+                            content="2"
+                            overlap
+                            >
+                            <v-icon
+                            style="color: grey;"
+                            
+                            >
+                                mdi-bell
+                            </v-icon>
+                        </v-badge>
+
+                        <v-avatar
+                        size="30"
+                        class="ml-5"
+                        >
+                            <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+                        </v-avatar>
+                    </v-toolbar>
+                    </div>
+                </v-row>
+                </v-container>
+            </v-card>
             <v-navigation-drawer 
                 v-model="sidebarMenu" 
-                app
-                floating
-                :permanent="sidebarMenu"
-                :mini-variant.sync="mini"
+                absolute
+                :permanent="false"
+                color="#1565D8"
+                width="180"
                 >
-                <v-list class="pb-4" dense color="#1565D8" dark>
+                <v-list class="pb-4" dense dark>
                     <v-list-item>
                         <v-list-item-content>
                             <v-list-item-title>
@@ -46,7 +58,7 @@
                         </v-list-item-content>
                     </v-list-item>
                 </v-list>
-                <v-list dense color="#1565D8" dark style="height: 100vh;">
+                <v-list dense dark>
                     <v-list-item class="mb-3 text-capitalize" v-for="item in items" :key="item.title" link :to="item.href">
                         <v-list-item-icon>
                             <v-icon color="default">{{ item.icon }}</v-icon>
@@ -76,7 +88,7 @@
                     </div>
                 </v-list>
             </v-navigation-drawer>
-        </v-app>
+        </div>
 </template>
 
 <script>
