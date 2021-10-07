@@ -23,7 +23,7 @@
                             >
                             </v-img>
                         </v-list-item-avatar>
-                        <span class="text-caption ml-3">You have {{ scheduledAppointments }} Appointments Scheduled</span>
+                        <span class="text-caption ml-3">You have {{ scheduledAppointments.toLocaleString('en-US') }} Appointments Scheduled</span>
                     </div>
                 </v-row>
                 <v-divider />
@@ -92,12 +92,12 @@ export default {
                 },
                 {
                     img: 'https://cdn.vuetifyjs.com/images/john.png',
-                    name: 'Darell stewards',
+                    name: 'Hope Canbell',
                     time: '12:00pm'
                 },
                 {
                     img: 'https://cdn.vuetifyjs.com/images/john.png',
-                    name: 'Darell stewards',
+                    name: 'Lee Ann',
                     time: '12:00pm'
                 },
             ],

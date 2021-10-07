@@ -77,9 +77,9 @@ export default {
     methods: {
         async login() {
             this.$store.dispatch('toggleSpinner', true)
-            if (this.form.username == '' || this.form.password == '') {
+            if (this.form.username == '' || this.form.password == '') {  //checking for form field length
                 this.$store.dispatch('toggleSpinner', false)
-                this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Please fill all fields'   })
+                this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Please fill all fields'})
             } else {
                 await loginUser(this.form).then((data) => {
                     this.$store.dispatch('toggleSpinner', false)
@@ -90,7 +90,7 @@ export default {
                             this.$router.push('/dashboard')
                         }, 2000);
                     } else {
-                        this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Your account is not yet verified'   })
+                        this.$store.dispatch('showNotificationComponent', {type: 'error',msg: 'Your account is not yet verified'})
                     }
                 }).catch(() => {
                     this.$store.dispatch('toggleSpinner', false)

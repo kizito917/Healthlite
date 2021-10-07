@@ -96,9 +96,7 @@
 export default {
     data () {
         return {
-            drawer: true,
             sidebarMenu: true,
-            toggleMini: false,
             items: [
                 { title: 'Dashboard', href:"/dashboard", icon: 'mdi-view-dashboard' },
                 { title: 'Waiting Room', icon: 'mdi-clock' },
@@ -109,10 +107,12 @@ export default {
             ],
         }
     },
-    computed: {
-        mini() {
-            return (this.$vuetify.breakpoint.smAndDown) || this.toggleMini
-        },
+    created() {
+        setInterval(() => {
+            if (this.$vuetify.breakpoint.smAndDown == false) {
+                this.sidebarMenu = true
+            } 
+        }, 1000);
     }
 }
 </script>

@@ -24,7 +24,7 @@
 
                                 <v-list-item
                                     v-for="data in items"
-                                    :key="data.subtitle"
+                                    :key="data.id"
                                 >
                                     <v-list-item-avatar>
                                     <v-img
@@ -56,26 +56,32 @@ export default {
         return {
             items: [
                 {
+                    id: 1,
                     img: require('../assets/img/a1.png'),
                     subtitle: 'There are 3 new ready reports for Tosin Odubela',
                 },
                 {
+                    id: 2,
                     img: require('../assets/img/a2.png'),
                     subtitle: 'You have scheduled an interview with Michael Okoh',
                 },
                 {
+                    id: 3,
                     img: require('../assets/img/a3.png'),
                     subtitle: 'You have scheduled 3 appointment for 24th Feb, 2020',
                 },
                 {
+                    id: 4,
                     img: require('../assets/img/a4.png'),
                     subtitle: 'Okereke Chinaza has rescheduled appointment',
                 },
                 {
+                    id: 5,
                     img: require('../assets/img/a1.png'),
                     subtitle: 'There are 3 new ready reports for Chinaza Okereke',
                 },
                 {
+                    id: 6,
                     img: require('../assets/img/a1.png'),
                     subtitle: 'There are 3 new ready reports for Tosin Odubela',
                 }

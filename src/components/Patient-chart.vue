@@ -19,7 +19,7 @@
                     <div id="chart" class="patient-chart">
                         <apexchart type="donut" :options="chartOptions"  :series="series"></apexchart>
                     </div>
-                    <h4 class="pb-4">Total Patients : {{ total_patients }}</h4>
+                    <h4 class="pb-4">Total Patients : {{ total_patients.toLocaleString('en-US') }}</h4>
                 </div>
             </div>
         </v-card>
@@ -35,12 +35,11 @@ export default {
     },
     data() {
         return {
-            series: this.$store.state.series,
+            series: [8000, 4000, 340, 5],
             chartOptions: {
                 chart: {
-                type: 'donut',
+                    type: 'donut',
                 },
-                series: this.$store.state.series,
                 labels: ["Male", "Female", "Transgender", "Others"],
                 responsive: [{
                     breakpoint: 280,

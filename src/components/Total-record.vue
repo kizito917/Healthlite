@@ -23,7 +23,7 @@
                         </v-row>
                         <v-row>
                             <v-col cols="12">
-                                <h2>{{ total_patients }}</h2>
+                                <h2>{{ total_patients.toLocaleString('en-US') }}</h2>
                                 <h5 class="font-weight-thin">Total Patients</h5>
                                 <p class="mt-5 text-caption">
                                     <v-icon
@@ -59,7 +59,7 @@
                         </v-row>
                         <v-row>
                             <v-col cols="12">
-                                <h2>{{ total_appointments }}</h2>
+                                <h2>{{ total_appointments.toLocaleString('en-US') }}</h2>
                                 <h5 class="font-weight-thin">Appointments</h5>
                                 <p class="mt-5 text-caption">
                                     <v-icon
@@ -95,7 +95,7 @@
                         </v-row>
                         <v-row>
                             <v-col cols="12">
-                                <h2>{{ total_waiting_room }}</h2>
+                                <h2>{{ total_waiting_room.toLocaleString('en-US') }}</h2>
                                 <h5 class="font-weight-thin">Waiting Room</h5>
                                 <p class="mt-5 text-caption">
                                     <v-icon

@@ -1,5 +1,5 @@
 <template>
-    <v-container-fluid>
+    <v-container fluid>
         <Navbar />
             <v-main class="mt-6">
                 <div class="parent-div">
@@ -25,7 +25,7 @@
                                                     </v-btn>
                                                 </div>
                                             </v-col>
-                                            <v-col cols="12" md="4" class="mb-3">
+                                            <v-col cols="12" md="4" class="mb-3 character-welcome">
                                                 <div class="float-md-right">
                                                     <v-img
                                                     src="../assets/img/character2.png"
@@ -62,7 +62,7 @@
                     </transition>
                 </div>
             </v-main>
-    </v-container-fluid>
+    </v-container>
 </template>
 
 
@@ -84,7 +84,7 @@ export default {
         async getSCheduleDetails() {
             await getScheduleData()
             .then((data) => {
-                this.$store.dispatch('saveScheduleDataInStore', data)
+                this.$store.dispatch('saveScheduleDataInStore', data) //sending gotten data of Schedule page to central store
             })
             .catch((err) => {
                 console.log(err)

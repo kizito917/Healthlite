@@ -17,8 +17,7 @@ export default new Vuex.Store({
     new_appointment: 0,
     patient_stats: [],
     appointments: [],
-    scheduledAppointments: 0,
-    series: []
+    scheduledAppointments: 0
   },
   mutations: {
     HIDE_NOTIFICATION: (state) => {
@@ -33,12 +32,6 @@ export default new Vuex.Store({
       state.new_appointment = payload.new_appointment
       state.patient_stats = payload.patient_stats
       state.appointments = payload.appointments
-      var series = []
-      series.push(payload.patient_stats[0].male)
-      series.push(payload.patient_stats[0].female)
-      series.push(payload.patient_stats[0].trans)
-      series.push(payload.patient_stats[0].others)
-      state.series = series
     },
     SAVE_SCHEDULE_DATA: (state, payload) => {
       state.scheduledAppointments = payload.scheduledAppointments

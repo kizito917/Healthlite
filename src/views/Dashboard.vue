@@ -1,5 +1,5 @@
 <template>
-    <v-container-fluid>
+    <v-container fluid>
         <Navbar />
             <v-main class="mt-6">
                 <div class="parent-div">
@@ -9,10 +9,10 @@
                                 <div class="px-3">
                                     <div>
                                         <v-row class="welcome-tile">
-                                            <v-col cols="9" md="9">
+                                            <v-col cols="12" md="9">
                                                 <div class="ml-3 mt-2 mb-2 white--text">
                                                     <h2>Welcome, Dr. Fayemi David</h2>
-                                                    <p class="mt-2">You have {{ new_appointment }} new appointments and there are currently {{ total_waiting_room }} patients in the waiting room. Have a nice day at work!</p>
+                                                    <p class="mt-2">You have {{ new_appointment.toLocaleString('en-US') }} new appointments and there are currently {{ total_waiting_room.toLocaleString('en-US') }} patients in the waiting room. Have a nice day at work!</p>
                                                     <v-btn
                                                         tile
                                                         class="white--text welcome-tile-btn"
@@ -35,7 +35,7 @@
                                                     </v-btn>
                                                 </div>
                                             </v-col>
-                                            <v-col cols="3" md="3">
+                                            <v-col cols="3" md="3" class="character-welcome">
                                                 <div class="float-right">
                                                     <v-img
                                                     src="../assets/img/character.png"
@@ -87,7 +87,7 @@
                     </transition>
                 </div>
             </v-main>
-    </v-container-fluid>
+    </v-container>
 </template>
 
 
@@ -117,7 +117,7 @@ export default {
         async getDashboardData() {
             await getAllDashboardData()
             .then((data) => {
-                this.$store.dispatch('saveDashboardDataInStore', data)
+                this.$store.dispatch('saveDashboardDataInStore', data) //sending gotten data of Dashboard to central store
             })
             .catch((err) => {
                 console.log(err)
