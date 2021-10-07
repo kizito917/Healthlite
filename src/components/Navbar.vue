@@ -5,7 +5,8 @@
                 <v-row class="child-flex">
                     <div>
                     <v-toolbar
-                    color="white" 
+                    color="white"
+                    elevation="0"
                     >
                         <v-app-bar-nav-icon @click.stop="sidebarMenu = !sidebarMenu"></v-app-bar-nav-icon>
 
@@ -35,6 +36,7 @@
                 </v-row>
                 </v-container>
             </v-card>
+            <v-divider />
             <v-navigation-drawer 
                 v-model="sidebarMenu" 
                 absolute
